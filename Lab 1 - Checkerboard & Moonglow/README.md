@@ -8,17 +8,17 @@ A generalized checkerboard is a rectangular grid one that has four parameters:
   * CS: The cycle size.
   
 The grid is a (R * C) matrix, where the element in row r and column c, contains the character SC + (r+c)%CS. For example, here's a generalized checkerboard with R=5, C=6, SC = 'a' and CS=4:
-
+```
 a	b	c	d	a	b  
 b	c	d	a	b	c  
 c	d	a	b	c	d  
 d	a	b	c	d	a  
 a	b	c	d	a	b
-
+```
 Your job is to write the program **checkerboard.cpp**, which reads five inputs from standard input. The first four are the parameters R, C, SC and CS, as defined above. The fifth parameter is a width W. The starting character, SC, should be read as a char and the remaining parameters should be read as integers.
 
 Your program should print out the specified checkerboard such that each element of the grid is printed as a (W * W) square. Here are some examples:
-
+```
 UNIX> ./checkerboard  
 5 6 a 4 1  
 abcdab  
@@ -72,7 +72,7 @@ UNIX> ./checkerboard
 111000111000111000111000111000111000111000111000111000111000111000111000111000111000111000111000111000111000111000111000  
 11100011100011100011100011100011100011100011100011100011100011100011100011100011100011100011100011100011100011100011100    
 UNIX> 
-
+```
 **Error checking:** Your program should print the same output as mine on standard error if too few arguments are given, or if they are not numbers. It should exit silently if any of the parameters is less than or equal to zero, and if the ASCII value of the starting character plus the cycle size is greater than 127.
 
 # Moonglow.cpp
@@ -88,7 +88,7 @@ You don't have to check for errors, and you may assume that the input is in the 
 The input will specify exactly one student's name.
 That student's name won't be "AVERAGE" or "NAME."
 Here are some examples:
-
+```
 UNIX> cat test-1.txt  
 NAME Fred  
 UNIX> ./moonglow < test-1.txt  
@@ -124,4 +124,5 @@ AVERAGE Starrlite 5 6 7
 UNIX> ./moonglow < test-6.txt  
 Starrlite 73  
 UNIX>   
+```
 Some comments on the examples. First, the file doesn't have to have any scores, like test-1.txt. Second, you should use doubles and not integers. Third, the "NAME" can appear  anywhere, and can be on a different line than the name, as in test-3.txt. Third, the file may have extraneous words, such as "I miss Starrlight!!", which means that you cannot assume that the input is a number if the input is neither "AVERAGE" or "NAME". Last, the "AVERAGE" can have zero numbers after it, as it does twice in test-6.txt. Thus, in the file, the score is 55, from the second "AVERAGE", plus 5, 6 and 7, which equals 73.
