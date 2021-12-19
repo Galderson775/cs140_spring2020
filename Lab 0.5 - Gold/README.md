@@ -11,9 +11,13 @@ This program reads a "map" on standard input. It's really a text file in the fol
   
 For example, the following map in map1.txt contains a lot of dirt, but it also contains one rock with nothing under it, and three rocks with gold: one ounce (A), three ounces (C) and 26 ounces (Z).
                                                             ...............
+                                                            
                                                             ..-............
+                                                            
                                                             .........A.....
+                                                            
                                                             ..Z.........C..
+                                                            
                                                             
 Your job is to write a program called **gold.cpp**, which reads a map on standard input and prints the total ounces of gold on the map.
 
