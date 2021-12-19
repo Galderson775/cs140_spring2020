@@ -59,3 +59,69 @@ When you perform deletion on n, use Check_Balance() to fix the balancing when yo
 The only traversal that you should modify from the lecture nodes is recursive_inorder_print(). It should print the height of each node before it prints its keys.
 
 The other traversals will be unchanged from the lecture notes on binary search trees. Test your code with avltree_test:
+```
+UNIX> avltree_test 'AVL>'
+AVL> INSERT Fred 0 0
+AVL> INSERT Luther 1 1
+AVL> PRINT         
+  0 Luther
+1 Fred
+AVL> INSERT Xavier 2 2
+AVL> PRINT
+  0 Xavier
+1 Luther
+  0 Fred
+AVL> INSERT Binky 3 3
+AVL> INSERT Daisy 4 4
+AVL> PRINT
+  0 Xavier
+2 Luther
+    0 Fred
+  1 Daisy
+    0 Binky
+AVL> DELETE Xavier
+AVL> PRINT
+  1 Luther
+    0 Fred
+2 Daisy
+  0 Binky
+AVL> QUIT
+UNIX> 
+```
+I have an executable avltree_test_help that prints out when it detects imbalances, and when it performs rotations. Here is the same set of commands as above:
+```
+UNIX> avltree_test_help 'AVL>'
+AVL> INSERT Fred 0 0
+AVL> INSERT Luther 1 1
+AVL> PRINT  
+  0 Luther
+1 Fred
+AVL> INSERT Xavier 2 2
+Zig-zig imbalance rooted by Fred
+Rotate about Luther
+AVL> PRINT
+  0 Xavier
+1 Luther
+  0 Fred
+AVL> INSERT Binky 3 3
+AVL> INSERT Daisy 4 4
+Zig-zag imbalance rooted by Fred
+Rotate about Daisy
+Rotate about Daisy
+AVL> PRINT
+  0 Xavier
+2 Luther
+    0 Fred
+  1 Daisy
+    0 Binky
+AVL> DELETE Xavier
+Zig-zig imbalance rooted by Luther
+Rotate about Daisy
+AVL> PRINT
+  1 Luther
+    0 Fred
+2 Daisy
+  0 Binky
+AVL> QUIT
+UNIX>
+```
